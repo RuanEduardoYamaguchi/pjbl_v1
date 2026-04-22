@@ -99,22 +99,20 @@ Função escolhida: '''))
 
         elif opcao == 4:
             if sexo == "M":
-                tmb = (10 * peso) + (6.25 * (altura * 100)) - (5 * idade) + 5
+                tmb = (10*peso)+(6.25*(altura*100))-(5*idade)+5
                 print(f"Essa é a sua taxa metabólica basal: {tmb}")
             elif sexo == "F":
-                tmb = (10 * peso) + (6.25 * (altura * 100)) - (5 * idade) - 161
+                tmb = (10*peso)+(6.25*(altura*100))-(5*idade)-161
                 print(f"Essa é a sua taxa metabólica basal: {tmb}")
-
             nivel_atividade = int(input('''Qual nivel de atividade você ira fazer:
 [1] Sedentário
 [2] Levemente ativo
 [3] Moderado
 [4] Muito ativo
 Opção escolhida:'''))
-
             if nivel_atividade == 1:
                 tdee = tmb * 1.2
-            elif nivel_atividade == 2:
+            elif nivel_atividade == 2: 
                 tdee = tmb * 1.375
             elif nivel_atividade == 3:
                 tdee = tmb * 1.55
@@ -126,23 +124,22 @@ Opção escolhida:'''))
 [2] Manter
 [3] Ganhar massa
 Objetivo: '''))
-
             if objetivo == 1:
                 exercicio = int(input('''Qual atividade você quer praticar: 
 [1] Caminhada
 [2] Corrida
 [3] Musculação
 Opção escolhida:'''))
-
-                if objetivo == 1:
-                    calorias_objetivo = 300
+                if objetivo == 1:  # emagrecer
+                    calorias_objetivo = 300  # déficit via exercício
                     if exercicio == 1:
                         tempo_exercicio = calorias_objetivo / 5
                     elif exercicio == 2:
                         tempo_exercicio = calorias_objetivo / 10
                     elif exercicio == 3:
                         tempo_exercicio = calorias_objetivo / 6
-                elif objetivo == 2:
+
+                elif objetivo == 2:  # manter
                     calorias_objetivo = 200
                     if exercicio == 1:
                         tempo_exercicio = calorias_objetivo / 5
@@ -150,20 +147,20 @@ Opção escolhida:'''))
                         tempo_exercicio = calorias_objetivo / 10
                     elif exercicio == 3:
                         tempo_exercicio = calorias_objetivo / 6
-                elif objetivo == 3:
-                    if exercicio == 3:
-                        tempo_exercicio = 60
+
+                elif objetivo == 3:  # ganhar massa
+                    if exercicio == 3: 
+                        tempo_exercicio = 60 
                     else:
-                        tempo_exercicio = 20
-
+                        tempo_exercicio = 20  
+                
             meta = int(input('Quantas horas diárias você quer colocar como meta? '))
-            tempo_feito = int(input("Quanto tempo você treinou hoje?"))
+            tempo_feito = int(input("Quanto tempo você treinou hoje?")) 
             tempo_treino = tempo + tempo_feito
-
             if meta <= tempo_feito:
-                print(f"Parabéns você concluiu sua meta diária de {meta} horas fazendo {tempo_feito} horas ")
+                print(f"Parabéns você concluiu sua meta diária de {meta} horas fazendo {tempo_feito} horas ") 
             else:
-                print(f"Infelizmente hoje você não cumpriu sua meta de {meta} horas, faltou {meta - tempo_feito} horas")
+                print(f"Infelizmente hoje você não cumpriu sua meta de {meta} horas, faltou {meta-tempo_feito} horas")
 
         elif opcao == 5:
             print(f'''Vamos para seu resumo diário

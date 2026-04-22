@@ -1,7 +1,7 @@
 print(f"{'=-'*10} Bem vindo ao FitCore {'=-'*10} \nA calculadora focada em seu desenvolvimento físico")
 iniciar = str(input("Deseja iniciar o programa? [S/N]")).upper()
 
-imc = 0
+
 agua = 0
 exercicio = 0
 caloria_total = 0
@@ -28,6 +28,8 @@ while iniciar == 'S':
             altura = float(input("Algo deu errado, Digite novamente: "))
         print(f"Dados = sexo {sexo}, idade {idade}, peso {peso} e altura {altura}")
         dados = str(input("Os Dados estao corretos: [S/N]")).upper()
+    imc = peso / (altura * altura)
+    agua = peso * 35
 
     encerrar = 'N'
     while encerrar == 'N':
@@ -54,7 +56,6 @@ Função escolhida: '''))
             print("VOLTANDO AO MENU PRINCIPAL... \n")
 
         elif opcao == 2:
-            agua = peso * 35
             print(f"\nPara atingir sua meta diaria de hidratação, você precisa ingerir {agua} Ml de água \n")
             print("VOLTANDO AO MENU PRINCIPAL... \n")
 
@@ -131,6 +132,7 @@ Objetivo: '''))
 [3] Musculação
 Opção escolhida:'''))
                 if objetivo == 1:  # emagrecer
+                    objetivo = "Emagrecer"
                     calorias_objetivo = 300  # déficit via exercício
                     if exercicio == 1:
                         tempo_exercicio = calorias_objetivo / 5
@@ -140,6 +142,7 @@ Opção escolhida:'''))
                         tempo_exercicio = calorias_objetivo / 6
 
                 elif objetivo == 2:  # manter
+                    objetivo = "Manter"
                     calorias_objetivo = 200
                     if exercicio == 1:
                         tempo_exercicio = calorias_objetivo / 5
@@ -165,7 +168,7 @@ Opção escolhida:'''))
         elif opcao == 5:
             print(f'''Vamos para seu resumo diário
 O seu imc é: {imc:.2f}
-Meta de hidratação: {agua}
+Meta de hidratação: {agua}mL
 Total de exercicios feitos: {exercicio}
 Total de calorias gastas: {caloria_total}
 Meta: {meta} 

@@ -45,6 +45,7 @@ calorias = 0
 tempo = 0
 sexo = ""
 meta_tempo_exercicios_diaria = 0
+meta_diaria_exercicios_minutos = 0
 
 print(f"{'=-'*10} Bem vindo ao FitCore {'=-'*10} \nA calculadora focada em seu desenvolvimento físico")
 executar = str(input("Deseja iniciar o programa? [S/N]")).upper()
@@ -191,7 +192,7 @@ while executar == 'S':
                 sep='')  # parâmetro separador do print
             iniciar = str(input("Gostaria de refazer os testes: [S/N]")).upper()
 
-        elif opcao == 6: #meta diária de exercício, de acordo com o objetivo
+        elif opcao == 6: # meta diária de exercício, de acordo com o objetivo
             if sexo == "M":
                 tmb = (10 * peso) + (6.25 * (altura * 100)) - (5 * idade) + 5
                 print(f"Essa é a sua taxa metabólica basal: {tmb}")
@@ -244,12 +245,12 @@ while executar == 'S':
                 else:
                     tempo_exercicio = 20
 
-            meta = int(input('Quantas horas diárias você quer colocar como meta? '))
+            meta_tempo_exercicios_diaria = int(input('Quantas horas diárias você quer colocar como meta? '))
             tempo_feito = int(input("Quanto tempo você treinou hoje? "))
             tempo_treino_feito = tempo_treino_feito + tempo_feito
 
-            if meta <= tempo_feito:
-                print(f"Parabéns você concluiu sua meta diária de {meta} horas fazendo {tempo_feito} horas ")
+            if meta_tempo_exercicios_diaria <= tempo_feito:
+                print(f"Parabéns você concluiu sua meta diária de {meta_tempo_exercicios_diaria} horas fazendo {tempo_feito} horas ")
             else:
                 print(f"Infelizmente hoje você não cumpriu sua meta de {meta_tempo_exercicios_diaria} horas, faltou {meta_tempo_exercicios_diaria - tempo_feito} horas")
 
